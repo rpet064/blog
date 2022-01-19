@@ -1,0 +1,4 @@
+# local files to ignore
+
+.DS_Store
+node_modules
