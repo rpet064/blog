@@ -24,11 +24,11 @@ app.get("/posts/:postName", function(req, res) {
   let lowerPost = _.lowerCase(req.params.postName);
 
   posts.forEach(function(post) {
-    let postText = _.lowerCase(post.text);
+    let postText = _.lowerCase(post.title);
 
     if (lowerPost === postText) {
       res.render("post", {
-          title: post.text,
+          title: post.title,
           content: post.body
       });
     }
@@ -61,8 +61,8 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
   let newPost = {
-    text: req.body.text,
-    body: req.body.title
+    title: req.body.title,
+    body: req.body.body
   };
   posts.push(newPost);
   res.redirect("/");

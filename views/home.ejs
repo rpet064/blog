@@ -4,7 +4,7 @@
     <h1>Welcome to Rob's Tech and Digital Technologies Blog</h1>
     <p><%=homeStartingContent%></p>
     <% posts.forEach(function(post){%>
-      <h1><%=post.text%></h1>
-      <p><%=post.body%></p>
+      <h1><%=post.title%></h1>
+      <p><%=post.body.slice(0, 50) + "..."%><a class="read-more" href="<%='/posts/' + post.title%>">Read More</a></p>
     <%})%>
 <%- include('partials/footer.ejs'); -%>
